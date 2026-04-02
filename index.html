@@ -57,6 +57,7 @@
     <script>
         // 1. Array inicial (nossa lista)
         let minhasTecnologias = ["JavaScript", "HTML", "CSS"];
+        const input=document.getElementById("novoItem")
 
         function carregarInterface() {
             let listaHtml = document.getElementById("listaNaTela");
@@ -77,11 +78,17 @@
                             }else {
                                  minhasTecnologias.push(valor);
 
-            document.getElementById("novoItem").value = "";
+            input.value = "";
+                                
             carregarInterface();
                             }
             
         }
+        input.addEventListener("keydown", function enviarEnter(event) {
+            if (event.key==="Enter") {
+                adicionarItem()
+            }
+        });
 
         carregarInterface();
     </script>
